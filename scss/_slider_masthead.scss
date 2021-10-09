@@ -1,0 +1,87 @@
+@import './animations';
+
+// Styling for the masthead
+header.masthead {
+    @include grandient_trans($gradient_trans_from, $gradient_trans_to);
+    height: 100vh;
+
+    .item {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        &.bg-1 {
+            background: linear-gradient($gradient_trans_from, $gradient_trans_to),center 30% url('../img/slider-single/slider-single-3.jpg');
+            background-size: cover;
+        }
+
+        &.bg-2 {
+            background: linear-gradient($gradient_trans_from, $gradient_trans_to),center 80% url('../img/slider-single/slider-single-2.jpg');
+            background-size: cover;
+        }
+
+        &.bg-3 {
+            background: linear-gradient($gradient_trans_from, $gradient_trans_to),center 40% url('../img/slider-single/slider-single-1.jpg');
+            background-size: cover;
+        }
+
+        .header-content {
+            text-align: center;
+            h1 {
+                font-size: 50px;
+                
+                .fa-heart {
+                    animation: pulse 2s infinite;
+                }
+            }
+            h3 {
+                font-size: 15px;
+            }
+            @media (max-width: 340px) {
+            
+                    
+                h1 {
+                    font-size: 30px;
+                }
+                
+         
+            }
+
+        }
+        .device-container {
+            max-width: 325px;
+            margin-right: auto;
+            margin-left: auto;
+            @include scroll;
+            .screen {
+                overflow-y: scroll;
+
+                img {
+                    border-radius: 3px;
+                    border: 0;
+                }
+                .img-fluid {
+                    max-width: 105%;
+                }
+            }
+        }
+           
+    }
+    @media (min-width: 992px) {
+        padding-top: 0;
+        padding-bottom: 0;
+        .header-content {
+            margin-bottom: 0;
+
+            text-align: left;
+            h1 {
+                font-size: 50px;
+            }
+        }
+        .device-container {
+            max-width: 325px;
+        }
+    }
+}
